@@ -5,7 +5,6 @@
 	box-sizing: border-box;
 }
 body {
-
 	font-family: 'Molengo', sans-serif;
 	font-weight: bold;
 	background: url('../img/natural_paper.png');
@@ -21,6 +20,10 @@ body {
 }
 .app__div--container {
 	width: 90%;
+}
+h1, 
+.app__div--container, 
+.header__p--grabber {
 	margin: 0 auto;
 }
 h1, legend, 
@@ -33,6 +36,10 @@ legend,
 #submit{
 	font-size: 2em;
 }
+legend, 
+.header__p--grabber {
+	font-weight: 700;
+}
 .contact__div--checkboxDiv, 
 .contact__div--radioDiv, 
 .contact__div--blackLine, 
@@ -41,22 +48,6 @@ textarea,
 select,
 #submit {
 	width: 100%;
-}
-
-/* image hack used to hide alt text in images...replaces -9999px method, author: Jeff Zeldman*/
-
-.hide-text {
-    text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
- 
- /*clearfix method when you want to extend background behind images*/
-  
-.group:after {
-    content: " ";
-	display: table;
-	clear: both;
 }
   
 /*Header Content*/
@@ -68,7 +59,6 @@ h1,
 	text-align: center;
 }
 h1 {
-	margin: 0 auto;
 	padding: 1em 0;
 	background-color: #333;
 	color: #fff;
@@ -76,8 +66,6 @@ h1 {
 } 
 .header__p--grabber {
 	color: #000;
-	font-weight: 700;
-	margin: 0 auto;
 	padding: .5em 0 .2em 0 ;
 }
 .header__div--blackLineOne {
@@ -98,13 +86,13 @@ fieldset {
 }
 legend {
 	padding: 1em 0;
-	font-weight: 700;
 }
 label, 
 [name="titleFormat"] {
 	display: inline-block;
 }
-label, p, span {
+label, 
+p {
 	color: #222;
 }
 label {
@@ -114,8 +102,7 @@ input,
 keygen, 
 select, 
 select[size="0"], 
-select[size="1"], 
-textarea {
+select[size="1"] {
     border: none;
 }
 input, 
@@ -129,7 +116,9 @@ select {
     -ms-transition: all .5s ease-out;
     transition: all .5s ease-out
 }
-input:focus, textarea:focus, select:focus {
+input:focus, 
+textarea:focus, 
+select:focus {
 	background-color: #fff;
 }
 [type="checkbox"], 
@@ -137,18 +126,19 @@ input:focus, textarea:focus, select:focus {
 	width: auto;
 	margin: 0 1em 0 0;
 }
+
 #mrRadioButton, 
-#msRadioButton, 
-#mrsRadioButton  {
+#mrsRadioButton, 
+#msRadioButton {
 	position: relative;
 	top: .1em;
 }
-#mrRadioButton, 
+#mrRadioButton,
 #msRadioButton {
 	margin: 0 0 0 .6em;
 }
 #mrsRadioButton {
-	margin: 0 0 0 .21em;
+	margin: 0 0 0 .2em;
 }
 #zipCode {
 	width: 95%;
@@ -159,6 +149,10 @@ input:focus, textarea:focus, select:focus {
 	color: #fff;
 	height: 3.5em;
 	margin: 2em 0 1em 0;
+	box-shadow: inset -.1em -.1em #666;
+}
+#submit:active {
+	box-shadow: inset .1em .1em #666;
 }
 #otherTopics {
 	height: 12em;   
@@ -168,9 +162,7 @@ input:focus, textarea:focus, select:focus {
 	height: .1em;
 	clear: both;
 }
-.contact__div--checkboxDiv, 
-.contact__div--radioDiv, 
-.contact__span--nameTitle {
+.contact__label--nameTitle {
 	margin: 0 0 1em 0;
 }
 .contact__input--inputHeight {
@@ -190,6 +182,13 @@ input:focus, textarea:focus, select:focus {
 :-moz-placeholder { 
     text-align: right; 
 }
+.contact__label--newsType,
+.contact__label--formatType {
+	margin: .5em 0 .5em 0;
+}
+.contact__label--fullblock {
+	width: 100%;
+}
 
 /*Footer Content*/
 
@@ -200,18 +199,25 @@ input:focus, textarea:focus, select:focus {
   
 @media screen and (min-width: 760px) {
 	
-	.app__div--container {
-		margin: 0 auto;
-	}
-	.app__div--container, input, select {
+	.app__div--container, 
+	input, 
+	select {
 	    width: 60%;	
+	}
+	
+	/*Header Content*/
+	
+	#mrRadioButton,
+	#msRadioButton,
+	#mrsRadioButton {
+		margin: 0 0 0 .6em;
 	}
 	
 	/*Contact Content*/
 	
 	label {
 		float: left;
-		width: 8em;
+		width: 5em;
 		margin: 2em 2.3em 1em 0;
 		color: #222;
 	} 
@@ -230,28 +236,53 @@ input:focus, textarea:focus, select:focus {
 	#zipCode {
 		width: 40%;
    }
+    .contact__label--nameTitle {
+		margin: 0;
+		width: 2em;
+   }
 	.contact__option--chooseStateColor {
 		padding: 0 0 0 1em;
    }
-    .contact__div--text {
-		float: left;
-		clear: left;
-		width: 100%;
-		padding-bottom: 1em;
-	}
-	.contact__label--input, 
-	.contact__label--age, 
-	.contact__label--selectState {
+    .contact__label--newsType,
+    .contact__label--formatType	{
+	   width: 7em;
+	   height: 1.1em;
+	   margin: 0;
+   }
+    .contact__label--age, 
+	.contact__label--selectState,
+	.contact__label--fullName,
+	.contact__label--email, 
+	.contact__label--primary,
+	.contact__label--secondary,
+	.contact__label--address,
+	.contact__label--city,
+	.contact__label--zipCode {
 		position: relative;
 	}
-	.contact__label--input {
+	.contact__label--fullName ,
+	.contact__label--zipCode,
+	.contact__label--age {
 		top: 2em;
 	}
-	.contact__label--age {
-		top: 1em;
+	.contact__label--primary, 
+	.contact__label--secondary {
+		top: .9em;
+	}
+	.contact__label--email,
+	.contact__label--address {
+		top: 1.5em;
+	}
+	.contact__label--city {
+		top: 2em;
 	}
 	.contact__label--selectState {
 		top: 1.8em;
+	}
+	.contact__div--newsletterReceipt,
+	.contact__div--newsFormat,
+	.contact__label--fullblock{
+		width: 33.3em;
 	}
 }
 
@@ -272,10 +303,7 @@ input:focus, textarea:focus, select:focus {
 	    float: left;
 	    padding-bottom: 1em;
 	}
-	.floatLeft {
-		float: left;
-	}
-	.contact__p--fullblock {
+	.contact__label--fullblock {
 		width: 100%;
 	}
  }

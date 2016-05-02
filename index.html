@@ -23,47 +23,47 @@
 				<div class="header__div--blackLineOne"></div>
 				<div class="header__div--blackLineTwo"></div>
 				<fieldset><legend>Contact Information</legend>
-					<div class="contact__div--text">
 						<div class="contact__div--radioDiv">
-							<span class="contact__span--nameTitle">Mr.</span><input type="radio" id="mrRadioButton" name="titleFormat" tabindex="1" value="Mr."><br>
+							<label class="contact__label--nameTitle" for="mrRadioButton">Mr&period;</label><input type="radio" id="mrRadioButton" name="titleFormat" tabindex="1" value="Mr."><br>
 						</div>
 						<div class="contact__div--radioDiv">
-							<span class="contact__span--nameTitle">Mrs.</span><input type="radio" id="mrsRadioButton" name="titleFormat"  tabindex="2" value="Mrs."><br>
+							<label class="contact__label--nameTitle" for="mrsRadioButton" >Mrs&period;</label><input type="radio" id="mrsRadioButton" name="titleFormat"  tabindex="2" value="Mrs."><br>
 						</div>
 						<div class="contact__div--radioDiv">
-							<span class="contact__span--nameTitle">Ms.</span><input type="radio" id="msRadioButton" name="titleFormat"  tabindex="3" value="Ms."><br>
+							<label class="contact__label--nameTitle" for="msRadioButton">Ms&period;</label><input type="radio" id="msRadioButton" name="titleFormat"  tabindex="3" value="Ms."><br>
 						</div>
-						<label for="fullName" class="contact__label--input">Full Name</label><br>
+						<div>
+						<label for="fullName" class="contact__label--fullName">Full Name</label><br>
 							<input type="text" id="fullName" placeholder="Required" class="contact__input--inputHeight" tabindex="4" required><br>
 						</div>
-						<div class="contact__div--text">
+						<div>
 						<label for="age" class="contact__label--age">Age</label><br>
 							<input type="number" id="age" class="contact__input--inputHeight" tabindex="5"><br>
 						</div>
-						<div class="contact__div--text">
-							<label for="email" class="contact__label--input">Email Address</label><br>
+						<div>
+							<label for="email" class="contact__label--email">Email Address</label><br>
 							<input type="email" id="email" placeholder="Required" class="contact__input--inputHeight" tabindex="6" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
 						</div>
-						<div class="contact__div--text">
-							<label for="primaryPhone" class="contact__label--input">Primary Phone Number</label><br>
+						<div>
+							<label for="primaryPhone" class="contact__label--primary">Primary Phone Number</label><br>
 							<input type="text" id="primaryPhone" placeholder="Format: ###-###-####" class="contact__input--inputHeight" tabindex="7" pattern="\d{3}[\-]\d{3}[\-]\d{4}"><br>
 						</div>
-						<div class="contact__div--text">
-							<label for="secondaryPhone" class="contact__label--input">Secondary Phone Number</label><br>
+						<div>
+							<label for="secondaryPhone" class="contact__label--secondary">Secondary Phone Number</label><br>
 							<input type="text" id="secondaryPhone" placeholder="Format: ###-###-####" class="contact__input--inputHeight" tabindex="8" pattern="\d{3}[\-]\d{3}[\-]\d{4}"><br>
 						</div>
-						<div class="contact__div--text">
-							<label for="address" class="contact__label--input">Street Address</label><br>
+						<div>
+							<label for="address" class="contact__label--address">Street Address</label><br>
 							<input type="text" id="address" class="contact__input--inputHeight" tabindex="9"><br>
 						</div>
-						<div class="contact__div--text">
-							<label for="city" class="contact__label--input">City</label><br>
+						<div>
+							<label for="city" class="contact__label--city">City</label><br>
 							<input type="text" id="city" class="contact__input--inputHeight" tabindex="10"><br>
 						</div>
-						<div class="contact__div--text">
+						<div>
 							<label for="state" class="contact__label--selectState">State</label>
 							<select class="contact__input--inputHeight" id="state" tabindex="11">
-								<option class="contact__option--chooseStateColor">Choose State</option>
+								<option class="contact__option--chooseStateColor" hidden selected disabled>Choose State</option>
 								<option value="AL">Alabama</option>
 								<option value="AK">Alaska</option>
 								<option value="AZ">Arizona</option>
@@ -117,8 +117,8 @@
 								<option value="WY">Wyoming</option>
 							</select>
 						</div>
-						<div class="contact__div--text" >
-							<label for="zipCode" class="contact__label--input" >Zip Code</label><br>
+						<div>
+							<label for="zipCode" class="contact__label--zipCode" >Zip Code</label><br>
 							<input type="text" id="zipCode" placeholder="Format: #####(-####)" class="contact__input--inputHeight" tabindex="12" pattern="(\d{5}([\-]\d{4})?)"><br>
 						</div>
 				</fieldset>
@@ -126,31 +126,25 @@
 				<fieldset class="group newsTitle"><legend>Newsletter</legend>
 					<div class="contact__div--newsletterReceipt">
 					<p>Select the newletters you would like to recieve</p>
-					<div class="contact__div--checkboxDiv">
-						<input type="checkbox" id="HTMLCheckButton" tabindex="13"><span>HTML News</span><br>
-					</div>
-					<div class="contact__div--checkboxDiv" >
-						<input type="checkbox" id="CSSCheckButton" tabindex="14" ><span>CSS News</span><br>
-					</div>
-					<div class="contact__div--checkboxDiv">
-						<input type="checkbox" id="JavascriptCheckButton" tabindex="15"><span>Javascript News</span><br>
-					</div>
+						<input type="checkbox" id="HTMLCheckButton" tabindex="13"><label for="HTMLCheckButton" class="contact__label--newsType">HTML News</label><br>
+						<input type="checkbox" id="CSSCheckButton" tabindex="14" ><label for="CSSCheckButton" class="contact__label--newsType" >CSS News</label><br>
+						<input type="checkbox" id="JavascriptCheckButton" tabindex="15"><label for="JavascriptCheckButton" class="contact__label--newsType">Javascript News</label><br>
 					</div>
 					<div class="contact__div--newsFormat">
 					<p>Newsletter format</p>
 					<div class="contact__div--radioDiv">
-						<input type="radio" id="HTMLRadioButton" name="NewsFormat" tabindex="16"><span>HTML</span><br>
+						<input type="radio" id="HTMLRadioButton" name="NewsFormat" tabindex="16"><label for="HTMLRadioButton" class="contact__label--formatType">HTML</label><br>
 					</div>
 					<div class="contact__div--radioDiv">
-						<input type="radio" id="TextRadioButton" name="NewsFormat" tabindex="17"><span>Plain Text</span><br>
+						<input type="radio" id="TextRadioButton" name="NewsFormat" tabindex="17"><label for="TextRadioButton" class="contact__label--formatType">Plain Text</label><br>
 					</div>
 					</div>
-					<p class="floatLeft contact__p--fullblock">Other topics you&apos;d like to hear about</p><br>
-					<textarea id="otherTopics" class="contact__textarea__inputTextareaHeight"></textarea><br>
-						<input type="button" id="submit" value="Sign Up" class="contact__input--inputHeight" tabindex="18">
-						<p class="footer__p--footer-text"> &copy; The Code Review</p>
+					<label class="contact__label--fullblock" for="otherTopics">Other topics you&apos;d like to hear about</label><br>
+					<textarea id="otherTopics" class="contact__textarea__inputTextareaHeight" tabindex="18" ></textarea><br>
+						<input type="button" id="submit" value="Sign Up" class="contact__input--inputHeight" tabindex="19">
+						<p class="footer__p--footer-text">&copy; The Code Review</p>
 				</fieldset>
-				</div>
-			</form>
+			</div>	
+		</form>
 	</body>
 </html>
